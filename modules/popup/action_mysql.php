@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @Project NUKEVIET 3.x
- * @Author VINADES.,JSC (contact@vinades.vn)
+ * @Project NUKEVIET 4.x
+ * @Author mynukeviet (contact@mynukeviet.net)
  * @Copyright (C) 2012 VINADES.,JSC. All rights reserved
  * @Createdate 2-10-2010 20:59
  */
-
-if( ! defined( 'NV_IS_FILE_MODULES' ) ) die( 'Stop!!!' );
+if (! defined('NV_IS_FILE_MODULES'))
+    die('Stop!!!');
 
 $sql_drop_module = array();
 
@@ -24,5 +24,3 @@ $sql_create_module[] = "INSERT INTO " . $db_config['prefix'] . "_" . $lang . "_"
 $sql_create_module[] = "INSERT INTO " . $db_config['prefix'] . "_" . $lang . "_" . $module_data . " VALUES ('timer_open', 1)";
 $sql_create_module[] = "INSERT INTO " . $db_config['prefix'] . "_" . $lang . "_" . $module_data . " VALUES ('timer_close', 0)";
 $sql_create_module[] = "INSERT INTO " . $db_config['prefix'] . "_" . $lang . "_" . $module_data . " VALUES ('popup_content', 'Popup content...')";
-
-?>
