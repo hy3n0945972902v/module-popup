@@ -16,7 +16,8 @@ $config = array(
     'timer_open' => 1,
     'timer_close' => 0,
     'size_w' => 600,
-    'size_h' => 400
+    'size_h' => 400,
+    'develop_mode' => 0
 );
 foreach($config as $config_name => $config_value){
     $sql_create_module[] = "INSERT INTO " . NV_CONFIG_GLOBALTABLE . " (lang, module, config_name, config_value) VALUES ('" . $lang . "', " . $db->quote($module_name) . ", " . $db->quote($config_name) . ", " . $db->quote($config_value) . ")";

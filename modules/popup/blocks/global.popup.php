@@ -45,6 +45,10 @@ if (! nv_function_exists('nv_popup')) {
                 $xtpl->parse('main.timer_close');
             }
             
+            if($row['develop_mode']){
+                $xtpl->parse('main');
+            }
+            
             $xtpl->parse('main');
             return $xtpl->text('main');
         }

@@ -28,3 +28,5 @@ $lang_module['save'] = "Lưu thay đổi";
 $lang_module['size'] = "Kích thước";
 $lang_module['size_w'] = "Chiều rộng";
 $lang_module['size_h'] = "Chiều cao";
+$lang_module['develop_mode'] = "Chế độ phát triển";
+$lang_module['develop_mode_note'] = "Luôn hiển thị popup để kiểm tra";

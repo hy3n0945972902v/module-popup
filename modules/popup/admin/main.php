@@ -18,6 +18,7 @@ if ($nv_Request->isset_request('save', 'post')) {
     $popup['timer_close'] = $nv_Request->get_int('timer_close', 'post', '');
     $popup['size_w'] = $nv_Request->get_int('size_w', 'post', 600);
     $popup['size_h'] = $nv_Request->get_int('size_h', 'post', 400);
+    $popup['develop_mode'] = $nv_Request->get_int('develop_mode', 'post', 0);
     $popup['popup_content'] = $_POST['popup_content'];
     
     $sth = $db->prepare("UPDATE " . NV_CONFIG_GLOBALTABLE . " SET config_value = :config_value WHERE lang = '" . NV_LANG_DATA . "' AND module = :module_name AND config_name = :config_name");
@@ -63,6 +64,7 @@ if (defined('NV_EDITOR') and nv_function_exists('nv_aleditor')) {
 }
 
 $row['ck_active'] = $row['active'] ? 'checked="checked"' : '';
+$row['ck_develop_mode'] = $row['develop_mode'] ? 'checked="checked"' : '';
 
 $xtpl = new XTemplate("main.tpl", NV_ROOTDIR . "/themes/" . $global_config['module_theme'] . "/modules/" . $module_file);
 $xtpl->assign('LANG', $lang_module);

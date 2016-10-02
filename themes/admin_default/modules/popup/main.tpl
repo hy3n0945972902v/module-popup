@@ -54,6 +54,12 @@
 				<label class="col-sm-5 col-md-3 text-right"><strong>{LANG.popup_content}</strong></label>
 				<div class="col-sm-19 col-md-21">{DATA.popup_content}</div>
 			</div>
+			<div class="form-group">
+				<label class="col-sm-5 col-md-3 text-right"><strong>{LANG.develop_mode}</strong></label>
+				<div class="col-sm-19 col-md-21">
+					<label><input type="checkbox" name="develop_mode" value="1" {DATA.ck_develop_mode} />{LANG.develop_mode_note}</label>
+				</div>
+			</div>
 			<div class="text-center">
 				<input class="btn btn-primary" type="submit" value="{LANG.save}" name="save" />
 			</div>

@@ -14,7 +14,8 @@
 <script type='text/javascript'>
 $(document).ready(function($){
 	var timer_close = '{ROW.timer_close}';
-	if($.cookie('popup_site') != 'yes'){
+	var develop_mode = {ROW.develop_mode};
+	if($.cookie('popup_site') != 'yes' || develop_mode){
 		$('#fanback').delay('{ROW.timer_open}').fadeIn('medium');
 		$('#TheBlogWidgets, #fan-exit').click(function(){
 			$('#fanback').stop().fadeOut('medium');
