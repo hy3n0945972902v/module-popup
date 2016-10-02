@@ -10,58 +10,64 @@ if (! defined('NV_IS_FILE_ADMIN'))
     die('Stop!!!');
 
 $page_title = $lang_module['main'];
-
-$xtpl = new XTemplate("main.tpl", NV_ROOTDIR . "/themes/" . $global_config['module_theme'] . "/modules/" . $module_file);
-$xtpl->assign('LANG', $lang_module);
-$xtpl->assign('ACTION', NV_BASE_ADMINURL . "index.php?" . NV_NAME_VARIABLE . "=" . $module_name);
+$popup_content_file = NV_ROOTDIR . '/' . NV_ASSETS_DIR . '/popup_content.txt';
 
 if ($nv_Request->isset_request('save', 'post')) {
     $popup['active'] = $nv_Request->get_bool('active', 'post', 0);
     $popup['timer_open'] = $nv_Request->get_int('timer_open', 'post', '');
     $popup['timer_close'] = $nv_Request->get_int('timer_close', 'post', '');
-    $popup['popup_content'] = $nv_Request->get_string('popup_content', 'post', '');
-    $popup['popup_content'] = nv_editor_nl2br($popup['popup_content']);
+    $popup['size_w'] = $nv_Request->get_int('size_w', 'post', 600);
+    $popup['size_h'] = $nv_Request->get_int('size_h', 'post', 400);
+    $popup['popup_content'] = $_POST['popup_content'];
     
-    $sth = $db->prepare("UPDATE " . NV_PREFIXLANG . "_" . $module_data . " SET config_value = :config_value WHERE config_name = :config_name");
-    
+    $sth = $db->prepare("UPDATE " . NV_CONFIG_GLOBALTABLE . " SET config_value = :config_value WHERE lang = '" . NV_LANG_DATA . "' AND module = :module_name AND config_name = :config_name");
+    $sth->bindParam(':module_name', $module_name, PDO::PARAM_STR);
     foreach ($popup as $config_name => $config_value) {
         $sth->bindParam(':config_name', $config_name, PDO::PARAM_STR);
         $sth->bindParam(':config_value', $config_value, PDO::PARAM_STR);
         $sth->execute();
     }
     
-    nv_del_moduleCache($module_name);
+    if(!empty($popup['popup_content'])){
+        file_put_contents($popup_content_file, $popup['popup_content']);
+    }
     
-    Header("Location: " . NV_BASE_ADMINURL . "index.php?" . NV_NAME_VARIABLE . "=" . $module_name);
+    $nv_Cache->delMod('settings');
+    
+    Header("Location: " . NV_BASE_ADMINURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name);
     die();
 }
 
-// Get value
-$sql = "SELECT config_name, config_value FROM " . NV_PREFIXLANG . "_" . $module_data . "";
-$list = nv_db_cache($sql);
+$row = $module_config[$module_name];
 
-$row = array();
-foreach ($list as $values) {
-    $row[$values['config_name']] = $values['config_value'];
+if(file_exists($popup_content_file)){
+    $row['popup_content'] = file_get_contents($popup_content_file);
+}else{
+    $row['popup_content'] = '';
 }
 
-$popup_content = nv_editor_br2nl($row['popup_content']);
+$row['popup_content'] = nv_editor_br2nl($row['popup_content']);
 
-if (! empty($popup_content))
-    $bodytext = nv_htmlspecialchars($popup_content);
+if (! empty($row['popup_content'])) {
+    $row['popup_content'] = nv_htmlspecialchars($row['popup_content']);
+}
 
-if (defined('NV_EDITOR'))
+if (defined('NV_EDITOR')) {
     require_once (NV_ROOTDIR . '/' . NV_EDITORSDIR . '/' . NV_EDITOR . '/nv.php');
+}
 
 if (defined('NV_EDITOR') and nv_function_exists('nv_aleditor')) {
-    $popup_content = nv_aleditor("popup_content", '100%', '300px', $popup_content);
+    $row['popup_content'] = nv_aleditor("popup_content", '100%', '300px', $row['popup_content']);
 } else {
-    $popup_content = "<textarea style=\"width:100%;height:300px\" name=\"popup_content\">" . $popup_content . "</textarea>";
+    $row['popup_content'] = "<textarea style=\"width:100%;height:300px\" name=\"popup_content\">" . $row['popup_content'] . "</textarea>";
 }
 
-$xtpl->assign('ACTIVE', $row['active'] ? 'checked="checked"' : '');
+$row['ck_active'] = $row['active'] ? 'checked="checked"' : '';
+
+$xtpl = new XTemplate("main.tpl", NV_ROOTDIR . "/themes/" . $global_config['module_theme'] . "/modules/" . $module_file);
+$xtpl->assign('LANG', $lang_module);
+$xtpl->assign('ACTION', NV_BASE_ADMINURL . "index.php?" . NV_NAME_VARIABLE . "=" . $module_name);
 $xtpl->assign('DATA', $row);
-$xtpl->assign('POPUP_CONTENT', $popup_content);
 
 $xtpl->parse('main');
 $contents = $xtpl->text('main');
@@ -69,5 +75,3 @@ $contents = $xtpl->text('main');
 include (NV_ROOTDIR . "/includes/header.php");
 echo nv_admin_theme($contents);
 include (NV_ROOTDIR . "/includes/footer.php");
-
-?>

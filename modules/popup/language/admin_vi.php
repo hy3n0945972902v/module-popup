@@ -17,10 +17,14 @@ $lang_translator['langtype'] = "lang_module";
 
 $lang_module['main'] = "Trang chính";
 $lang_module['active'] = "Hoạt động";
-$lang_module['timer_open'] = "Thời gian mở popup sau khi website tải xong (0 = mở cùng lúc)";
-$lang_module['timer_close'] = "Thời gian tự động đóng popup (0 = không tự động đóng)";
+$lang_module['active_note'] = "Cho phép hiển thị Popup";
+$lang_module['timer_open'] = "Thời gian mở Popup";
+$lang_module['timer_open_note'] = "Thời gian mở Popup sau khi website tải xong (0 = mở cùng lúc)";
+$lang_module['timer_close'] = "Thời gian tự động đóng popup";
+$lang_module['timer_close_note'] = "Đặt bằng 0 nếu không tự động đóng";
 $lang_module['popup_content'] = "Nội dung";
 $lang_module['second'] = "giây";
 $lang_module['save'] = "Lưu thay đổi";
-
-?>
+$lang_module['size'] = "Kích thước";
+$lang_module['size_w'] = "Chiều rộng";
+$lang_module['size_h'] = "Chiều cao";

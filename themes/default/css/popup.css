@@ -32,15 +32,16 @@
 }
 
 #TheBlogWidgets {
-	float:right;
-	cursor:pointer;
-	background:url('../images/popup/fanclose.png') repeat;
-	height:15px;
-	padding:20px;
-	position:relative;
-	padding-right:40px;
-	margin-top:-20px;
-	margin-right:-22px;
+    float: right;
+    cursor: pointer;
+    background: url(../images/popup/fanclose.png) repeat;
+    height: 15px;
+    padding: 20px;
+    position: relative;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin-top: -15px;
+    margin-right: -12px;
 }
 
 .remove-borda {
@@ -58,4 +59,9 @@
 	font-size:10px;
 	margin: 0 auto 5px auto;
 	float:center;
+}
+
+.popup_content{
+	overflow: hidden; 
+	padding: 0 10px
 }

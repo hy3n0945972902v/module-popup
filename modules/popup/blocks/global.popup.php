@@ -11,24 +11,12 @@ if (! defined('NV_SYSTEM'))
 
 if (! nv_function_exists('nv_popup')) {
 
-    /**
-     * nv_popup()
-     *
-     * @return
-     *
-     */
     function nv_popup($block_config)
     {
-        global $global_config, $site_mods, $my_head;
+        global $global_config, $site_mods, $nv_Cache, $module_config;
+        
         $module = $block_config['module'];
-        
-        // Get value
-        $sql = "SELECT config_name, config_value FROM " . NV_PREFIXLANG . "_" . $module;
-        $list = nv_db_cache($sql, '', $module);
-        
-        foreach ($list as $values) {
-            $row[$values['config_name']] = $values['config_value'];
-        }
+        $row = $module_config[$module];
         
         if ($row['active']) {
             if (file_exists(NV_ROOTDIR . "/themes/" . $global_config['module_theme'] . "/modules/" . $module . "/block.popup.tpl")) {
@@ -39,18 +27,23 @@ if (! nv_function_exists('nv_popup')) {
                 $block_theme = "default";
             }
             
-            $my_head .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . NV_BASE_SITEURL . "themes/" . $block_theme . "/css/popup.css\" />";
+            $popup_content_file = NV_ROOTDIR . '/' . NV_ASSETS_DIR . '/popup_content.txt';
+            if(file_exists($popup_content_file)){
+                $row['popup_content'] = file_get_contents($popup_content_file);
+            }else{
+                return '';
+            }
+            
+            $row['timer_open'] = $row['timer_open'] * 1000;
             
             $xtpl = new XTemplate("block.popup.tpl", NV_ROOTDIR . "/themes/" . $block_theme . "/modules/" . $module);
+            $xtpl->assign('TEMPLATE', $block_theme);
+            $xtpl->assign('ROW', $row);
             
             if ($row['timer_close']) {
                 $row['timer_close'] = $row['timer_close'] * 1000;
                 $xtpl->parse('main.timer_close');
             }
-            
-            $row['timer_open'] = $row['timer_open'] * 1000;
-            
-            $xtpl->assign('ROW', $row);
             
             $xtpl->parse('main');
             return $xtpl->text('main');
@@ -59,5 +52,3 @@ if (! nv_function_exists('nv_popup')) {
 }
 
 $content = nv_popup($block_config);
-
-?>
