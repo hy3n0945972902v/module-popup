@@ -6,8 +6,7 @@
  * @Copyright (C) 2012 VINADES.,JSC. All rights reserved
  * @Createdate 2-10-2010 20:59
  */
-if (! defined('NV_IS_FILE_MODULES'))
-    die('Stop!!!');
+if (!defined('NV_IS_FILE_MODULES')) die('Stop!!!');
 
 $sql_create_module = array();
 
@@ -19,6 +18,6 @@ $config = array(
     'size_h' => 400,
     'develop_mode' => 0
 );
-foreach($config as $config_name => $config_value){
+foreach ($config as $config_name => $config_value) {
     $sql_create_module[] = "INSERT INTO " . NV_CONFIG_GLOBALTABLE . " (lang, module, config_name, config_value) VALUES ('" . $lang . "', " . $db->quote($module_name) . ", " . $db->quote($config_name) . ", " . $db->quote($config_value) . ")";
 }

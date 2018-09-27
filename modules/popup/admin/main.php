@@ -6,8 +6,7 @@
  * @Copyright (C) 2012 VINADES.,JSC. All rights reserved
  * @Createdate 2-10-2010 20:59
  */
-if (! defined('NV_IS_FILE_ADMIN'))
-    die('Stop!!!');
+if (!defined('NV_IS_FILE_ADMIN')) die('Stop!!!');
 
 $page_title = $lang_module['main'];
 $popup_content_file = NV_ROOTDIR . '/' . NV_ASSETS_DIR . '/popup_content.txt';
@@ -29,7 +28,7 @@ if ($nv_Request->isset_request('save', 'post')) {
         $sth->execute();
     }
     
-    if(!empty($popup['popup_content'])){
+    if (!empty($popup['popup_content'])) {
         file_put_contents($popup_content_file, $popup['popup_content']);
     }
     
@@ -41,15 +40,15 @@ if ($nv_Request->isset_request('save', 'post')) {
 
 $row = $module_config[$module_name];
 
-if(file_exists($popup_content_file)){
+if (file_exists($popup_content_file)) {
     $row['popup_content'] = file_get_contents($popup_content_file);
-}else{
+} else {
     $row['popup_content'] = '';
 }
 
 $row['popup_content'] = nv_editor_br2nl($row['popup_content']);
 
-if (! empty($row['popup_content'])) {
+if (!empty($row['popup_content'])) {
     $row['popup_content'] = nv_htmlspecialchars($row['popup_content']);
 }
 

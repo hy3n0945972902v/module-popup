@@ -6,8 +6,7 @@
  * @Copyright (C) 2012 VINADES.,JSC. All rights reserved
  * @Createdate 2-10-2010 20:59
  */
-if (! defined('NV_IS_FILE_SITEINFO'))
-    die('Stop!!!');
+if (!defined('NV_IS_FILE_SITEINFO')) die('Stop!!!');
 
 $lang_siteinfo = nv_get_lang_module($mod);
 /*
