@@ -13,3 +13,5 @@ $allow_func = array(
 );
 
 define('NV_IS_FILE_ADMIN', true);
+
+$array_config = $module_config[$module_name];
