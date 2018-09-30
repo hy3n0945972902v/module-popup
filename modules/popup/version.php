@@ -18,5 +18,5 @@ $module_version = array(
     "date" => "Fri, 21 Mar 2014 03:44:56 GMT",
     "author" => "Ứng dụng NukeViet (contact@mynukeviet.net)",
     "uploads_dir" => array(),
-    "note" => ""
+    "note" => "Module tạo thông báo popup nổi bật giữa màn hình"
 );
