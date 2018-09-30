@@ -42,3 +42,4 @@
 /.buildpath
 /composer.json
 /vendor/
+/error.php
