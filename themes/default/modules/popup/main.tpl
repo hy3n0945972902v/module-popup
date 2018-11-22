@@ -5,7 +5,7 @@
     <div id='MorganAndMen'>
         <div id='TheBlogWidgets'></div>
         <div class='remove-borda'></div>
-        <div class="popup_content" style="width: {ROW.size_w">{ROW.popup_content}</div>
+        <div class="popup_content" style="width: {ROW.size_w}px">{ROW.popup_content}</div>
     </div>
 </div>
 <script type="text/javascript" src="{NV_BASE_SITEURL}themes/{TEMPLATE}/js/popup.js"></script>
