@@ -1,3 +1,72 @@
+@media screen 
+ and (max-device-width: 320px) 
+ and (min-device-width: 0px) {
+}
+@media screen 
+ and (max-device-width: 360px) 
+ and (min-device-width: 321px) {
+}
+@media screen 
+ and (max-device-width: 375px) 
+ and (min-device-width: 361px) {
+ #MorganAndMen{max-width: 100%;}
+ .popup_content img {max-width: 356px !important;}
+}
+@media screen 
+ and (max-device-width: 414px) 
+ and (min-device-width: 376px) {
+}
+@media screen 
+ and (max-device-width: 500px) 
+ and (min-device-width: 414px) {
+}
+@media screen 
+ and (max-device-width: 640px) 
+ and (min-device-width: 501px) {
+
+}
+@media screen 
+ and (max-device-width: 731px) 
+ and (min-device-width: 641px) {
+
+}
+@media screen 
+ and (max-device-width: 736px) 
+ and (min-device-width: 732px) {
+
+}
+@media screen 
+ and (max-device-width: 812px) 
+ and (min-device-width: 737px){
+
+}
+@media screen 
+ and (max-device-width: 823px) 
+ and (min-device-width: 813px){
+
+}
+@media screen 
+ and (max-device-width: 1024px) 
+ and (min-device-width: 824px){
+
+}
+@media screen and (max-device-width: 500px) {
+	#MorganAndMen{
+	width: 98% !important;
+	}
+	.popup_content{
+	width:100% !important;
+	}
+	#MorganAndMen{
+	    top: 9px !important;
+	}
+}
+@media screen and (max-device-width: 767px) {
+}
+@media screen and (max-device-width: 1024px) {
+	body {position: relative; min-height: 100%; top: 0px;}	
+	
+}
 #fanback {
     display: none;
     background: rgba(0, 0, 0, 0.8);
@@ -16,19 +85,18 @@
 
 #MorganAndMen {
     background: white;
-    width: 620px;
-    height: 470px;
+    width: 600px;
     position: absolute;
-    top: 50%;
-    left: 53%;
-    margin: -220px 0 0 -375px;
+    top: 50px;
+    left: 0;
+    margin: auto;
+    right: 0;
     -webkit-box-shadow: inset 0 0 50px 0 #939393;
     -moz-box-shadow: inset 0 0 50px 0 #939393;
     box-shadow: inset 0 0 50px 0 #939393;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    margin: -220px 0 0 -375px;
 }
 
 #TheBlogWidgets {
@@ -40,7 +108,7 @@
     position: relative;
     padding-right: 10px;
     padding-top: 10px;
-    margin-top: -15px;
+    margin-top: -17px;
     margin-right: -12px;
 }
 
@@ -63,5 +131,13 @@
 
 .popup_content {
     overflow: hidden;
-    padding: 0 10px
+    padding: 0 10px;
+    position: relative;
+    text-shadow: 0 0 black;
+}
+.popup_content img{
+   width:100%;
+   height:100%;
+   max-width: 600px;
+   margin-bottom: 10px;
 }
