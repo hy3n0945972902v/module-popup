@@ -1,143 +1,137 @@
-@media screen 
- and (max-device-width: 320px) 
- and (min-device-width: 0px) {
+@media screen and (max-device-width: 320px) and (min-device-width: 0px) {
 }
-@media screen 
- and (max-device-width: 360px) 
- and (min-device-width: 321px) {
-}
-@media screen 
- and (max-device-width: 375px) 
- and (min-device-width: 361px) {
- #MorganAndMen{max-width: 100%;}
- .popup_content img {max-width: 356px !important;}
-}
-@media screen 
- and (max-device-width: 414px) 	
- and (min-device-width: 376px) {
-}
-@media screen 
- and (max-device-width: 500px) 
- and (min-device-width: 414px) {
-}
-@media screen 
- and (max-device-width: 640px) 
- and (min-device-width: 501px) {
 
+@media screen and (max-device-width: 360px) and (min-device-width: 321px) {
 }
-@media screen 
- and (max-device-width: 731px) 
- and (min-device-width: 641px) {
 
+@media screen and (max-device-width: 375px) and (min-device-width: 361px) {
+				#MorganAndMen {
+								max-width: 100%;
+				}
+				.popup_content img {
+								max-width: 356px !important;
+				}
 }
-@media screen 
- and (max-device-width: 736px) 
- and (min-device-width: 732px) {
 
+@media screen and (max-device-width: 414px) and (min-device-width: 376px) {
 }
-@media screen 
- and (max-device-width: 812px) 
- and (min-device-width: 737px){
 
+@media screen and (max-device-width: 500px) and (min-device-width: 414px) {
 }
-@media screen 
- and (max-device-width: 823px) 
- and (min-device-width: 813px){
 
+@media screen and (max-device-width: 640px) and (min-device-width: 501px) {
 }
-@media screen 
- and (max-device-width: 1024px) 
- and (min-device-width: 824px){
 
+@media screen and (max-device-width: 731px) and (min-device-width: 641px) {
 }
+
+@media screen and (max-device-width: 736px) and (min-device-width: 732px) {
+}
+
+@media screen and (max-device-width: 812px) and (min-device-width: 737px) {
+}
+
+@media screen and (max-device-width: 823px) and (min-device-width: 813px) {
+}
+
+@media screen and (max-device-width: 1024px) and (min-device-width: 824px) {
+}
+
 @media screen and (max-device-width: 500px) {
-	#MorganAndMen{
-	width: 98% !important;
-	}
-	.popup_content{
-	width:100% !important;
-	}
-	#MorganAndMen{
-	    top: 9px !important;
-	}
+				#MorganAndMen {
+								width: 98% !important;
+				}
+				.popup_content {
+								width: 100% !important;
+				}
+				#MorganAndMen {
+								top: 9px !important;
+				}
 }
+
 @media screen and (max-device-width: 767px) {
 }
+
 @media screen and (max-device-width: 1024px) {
-	body {position: relative; min-height: 100%; top: 0px;}	
-	
+				body {
+								position: relative;
+								min-height: 100%;
+								top: 0px;
+				}
 }
+
+.flexpopup {
+				display: flex;
+				justify-content: center;
+				background: rgba(0, 0, 0, 0.8);
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 99999;
+}
+
 #fanback {
-    display: none;
-    background: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99999;
+				display: none;
 }
 
 #fan-exit {
-    width: 100%;
-    height: 100%;
+				width: 100%;
+				height: 100%;
 }
 
 #MorganAndMen {
-    background: white;
-    width: 600px;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    margin: auto;
-    right: 0;
-    -webkit-box-shadow: inset 0 0 50px 0 #939393;
-    -moz-box-shadow: inset 0 0 50px 0 #939393;
-    box-shadow: inset 0 0 50px 0 #939393;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+				background: white;
+				position: absolute;
+				top: 10%;
+				-webkit-box-shadow: inset 0 0 50px 0 #939393;
+				-moz-box-shadow: inset 0 0 50px 0 #939393;
+				box-shadow: inset 0 0 50px 0 #939393;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
 }
 
 #TheBlogWidgets {
-    float: right;
-    cursor: pointer;
-    background: url(../images/popup/fanclose.png) repeat;
-    height: 15px;
-    padding: 20px;
-    position: relative;
-    padding-right: 10px;
-    padding-top: 10px;
-    margin-top: -17px;
-    margin-right: -12px;
+				float: right;
+				cursor: pointer;
+				background: url(../images/popup/fanclose.png) repeat;
+				height: 15px;
+				padding: 20px;
+				position: relative;
+				padding-right: 10px;
+				padding-top: 10px;
+				margin-top: -15px;
+				margin-right: -12px;
 }
 
 .remove-borda {
-    height: 1px;
-    width: 366px;
-    margin: 0 auto;
-    background: #F3F3F3;
-    margin-top: 16px;
-    position: relative;
-    margin-left: 20px;
+				height: 1px;
+				width: 366px;
+				margin: 0 auto;
+				background: #F3F3F3;
+				margin-top: 16px;
+				position: relative;
+				margin-left: 20px;
 }
 
 #linkit, #linkit a.visited, #linkit a, #linkit a:hover {
-    color: #80808B;
-    font-size: 10px;
-    margin: 0 auto 5px auto;
-    float: center;
+				color: #80808B;
+				font-size: 10px;
+				margin: 0 auto 5px auto;
+				float: center;
 }
 
 .popup_content {
-    overflow: hidden;
-    padding: 0 10px;
-    position: relative;
-    text-shadow: 0 0 black;
+				overflow: hidden;
+				padding: 0 10px;
+				position: relative;
+				text-shadow: 0 0 black;
 }
-.popup_content img{
-   width:100%;
-   height:100%;
-   max-width: 600px;
-   margin-bottom: 10px;
+
+.popup_content img {
+				width: 100%;
+				max-width: 100%;
+				height: auto;
 }
