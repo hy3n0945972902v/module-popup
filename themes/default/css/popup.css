@@ -39,13 +39,13 @@
 
 @media screen and (max-device-width: 500px) {
 				#MorganAndMen {
-								width: 98% !important;
+								width: 310px !important;
 				}
 				.popup_content {
 								width: 100% !important;
 				}
 				#MorganAndMen {
-								top: 9px !important;
+								top: 10% !important;
 				}
 }
 
@@ -108,9 +108,8 @@
 
 .remove-borda {
 				height: 1px;
-				width: 366px;
+				width: 100%;
 				margin: 0 auto;
-				background: #F3F3F3;
 				margin-top: 16px;
 				position: relative;
 				margin-left: 20px;

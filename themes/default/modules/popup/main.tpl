@@ -1,15 +1,15 @@
 <!-- BEGIN: main  -->
 <link rel="StyleSheet" href="{NV_BASE_SITEURL}themes/{TEMPLATE}/css/popup.css">
 <div id='fanback'>
-		<div class='flexpopup'>
-				<div id='fan-exit'></div>
-				<div id='MorganAndMen'>
-						<div id='TheBlogWidgets'></div>
-						<div class='remove-borda'></div>
-						<div class="popup_content">{ROW.popup_content}</div>
-						<div class='remove-borda'></div>
-				</div>
-		</div>
+    <div class='flexpopup'>
+        <div id='fan-exit'></div>
+        <div id='MorganAndMen'>
+            <div id='TheBlogWidgets'></div>
+            <div class='remove-borda'></div>
+            <div class="popup_content">{ROW.popup_content}</div>
+            <div class='remove-borda'></div>
+        </div>
+    </div>
 </div>
 <script type="text/javascript" src="{NV_BASE_SITEURL}themes/{TEMPLATE}/js/popup.js"></script>
 <script type='text/javascript'>
